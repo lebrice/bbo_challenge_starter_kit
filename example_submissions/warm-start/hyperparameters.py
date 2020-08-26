@@ -30,6 +30,20 @@ logger = get_logger(__file__)
 T = TypeVar("T")
 HP = TypeVar("HP", bound="HyperParameters")
 
+
+class BoundType:
+    continuous: str = "continuous"
+    discrete: str = "discrete"
+    bandit: str = "bandit"
+
+
+@dataclass
+class BoundInfo(Serializable):
+    name: str
+    type: str = "continuous"
+    domain: Tuple[float, float] = (np.NINF, np.Infinity)
+
+
 @dataclass
 class HyperParameters(Serializable, decode_into_subclasses=True):  # type: ignore
     """ Base class for dataclasses of HyperParameters. """
@@ -357,17 +371,4 @@ def hparam(default: T,
         default=default,
         *args, **kwargs, 
     )
-
-
-class BoundType:
-    continuous: str = "continuous"
-    discrete: str = "discrete"
-    bandit: str = "bandit"
-
-
-@dataclass
-class BoundInfo(Serializable):
-    name: str
-    type: str = "continuous"
-    domain: Tuple[float, float] = (np.NINF, np.Infinity)
 
