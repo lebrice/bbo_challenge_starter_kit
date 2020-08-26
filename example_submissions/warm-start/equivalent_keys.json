@@ -1,0 +1,18 @@
+{
+        "learning_rate": [
+                "learning_rate",
+                "lr",
+                "learn_rate"
+        ],
+        "l1": [
+                "l1",
+                "l1_reg",
+                "l1_coef"
+        ],
+        "l2": [
+                "l2",
+                "l2_reg",
+                "l2_coef",
+                "weight_decay"
+        ]
+}

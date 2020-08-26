@@ -1,0 +1,6 @@
+simple_parsing
+torch
+pybnn
+pymongo
+tqdm
+GPyOpt
